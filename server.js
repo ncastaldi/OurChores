@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 
+const routes = require("./routes");
+
 const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
@@ -23,8 +25,12 @@ mongoose
         console.log("Error connecting to MongoDB", err);
     });
 
-app.get('/', function (req, res) {
-    res.send('Hello World!')
+app.use("/api", routes);
+
+app.get("/api/config", (req, res) => {
+    res.json({
+        success: true,
+    });
 });
 
 if (process.env.PRODUCTION_URL) {
