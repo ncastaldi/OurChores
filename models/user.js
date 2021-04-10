@@ -17,7 +17,17 @@ const userSchema = new Schema({
     phone: {
         type: String,
         required: false,
-    }
+    },
+    isOwner: {
+        type: Boolean,
+        default: true,
+        required: true,
+    },
+    isAdmin: {
+        type: Boolean,
+        default: false,
+        required: true,
+    },
 
 });
 
