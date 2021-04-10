@@ -9,6 +9,6 @@ const roomSchema = new Schema({
     },
 });
 
-const Chore = mongoose.model("Room", roomSchema);
+const Room = mongoose.model("Room", roomSchema);
 
 module.exports = Room;
