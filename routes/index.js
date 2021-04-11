@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const userRoutes = require("./user");
-const userRoutes = require("./chore");
+const choreRoutes = require("./chore");
 
 router.use("/user", userRoutes);
 router.use("/chore", choreRoutes);
